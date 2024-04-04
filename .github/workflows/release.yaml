@@ -5,12 +5,14 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+      - name: Set env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/v}" >> $GITHUB_ENV
       - uses: actions/checkout@v4 # https://github.com/actions/checkout
       - uses: azure/setup-helm@v4 # https://github.com/azure/setup-helm
       - name: Package and index Helm chart
         run: |
           set -o errexit -o nounset -o pipefail
-          helm package . --destination dist
+          helm package . --destination dist --version ${{ env.RELEASE_VERSION }}
           curl --fail --output-dir dist --remote-name --silent https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/index.yaml
           helm repo index dist --merge dist/index.yaml --url https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
       - uses: peaceiris/actions-gh-pages@v3 # https://github.com/peaceiris/actions-gh-pages
