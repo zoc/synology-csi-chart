@@ -3,10 +3,10 @@ entries:
   synology-csi:
   - apiVersion: v2
     appVersion: v1.1.3
-    created: "2024-03-30T20:19:35.873727367Z"
+    created: "2024-04-04T16:16:30.133303189Z"
     description: A Helm chart for the Synology CSI Driver
-    digest: 340e29b063550d0131da0c1430e2f42598cd01f42a531ac796ab8d3c57591664
-    home: https://github.com/zoc/synology-csi-chart
+    digest: 8aaf70d38ebc9f8f84d6e4d8876c4bb9872cbc9ba729698b906941ba968083b0
+    home: https://github.com/christian-schlichtherle/synology-csi-chart
     keywords:
     - Synology
     - CSI Driver
@@ -18,10 +18,10 @@ entries:
       url: https://github.com/zoc
     name: synology-csi
     sources:
-    - https://github.com/zoc/synology-csi-chart/tree/main
     - https://github.com/christian-schlichtherle/synology-csi-chart/tree/main
+    - https://github.com/zoc/synology-csi-chart/tree/main
     - https://github.com/SynologyOpenSource/synology-csi/tree/main
     urls:
     - https://zoc.github.io/synology-csi-chart/synology-csi-0.9.9.tgz
     version: 0.9.9
-generated: "2024-03-30T20:19:35.872918877Z"
+generated: "2024-04-04T16:16:30.132480423Z"
